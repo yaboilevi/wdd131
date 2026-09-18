@@ -22,13 +22,13 @@ h2 {
 
 ol {
   text-align: center;
-  margin: 10px 30% 10px 30%;
 }
 
 li {
   list-style: decimal;
   color: black;
   text-align: center;
+  margin: 10px 20% 2% 20%;
 }
 
 #john {
