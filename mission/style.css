@@ -1,23 +1,24 @@
 body {
-  text-align: justify;
+  text-align: center;
+  margin: 10px 25% 2% 25%;
+  max-width: 500px;
 }
 
 h1 {
   text-align: center;
   color: black;
-  padding: 50px 50px 20px 50px;
 }
 
 h2 {
   color: blue;
   text-align: center;
+  font-size: 20px;
 }
 
 .horizontal-line {
   border: none;
   height: 2px;
   background-color: gray;
-  width: 100%;
 }
 
 ol {
@@ -28,15 +29,14 @@ li {
   list-style: decimal;
   color: black;
   text-align: center;
-  margin: 10px 20% 2% 20%;
 }
 
 #john {
   text-align: center;
-  margin: 10px 30% 10px 30%;
 }
 
 .italic {
+  text-align: left;
   font-style: italic;
 }
 
