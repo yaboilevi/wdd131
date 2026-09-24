@@ -6,7 +6,6 @@ body {
 
 h1 {
   text-align: center;
-  color: black;
 }
 
 h2 {
@@ -27,7 +26,6 @@ ol {
 
 li {
   list-style: decimal;
-  color: black;
   text-align: center;
 }
 
@@ -49,4 +47,15 @@ li {
 img {
   width: 150px;
   height: 100px;
+}
+
+.dark-mode {
+  background-color: black;
+  color: white;
+}
+
+#theme-select {
+  position: fixed;
+  top: 10px;
+  left: 10px;
 }
