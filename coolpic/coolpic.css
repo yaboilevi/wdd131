@@ -1,67 +1,116 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
 body {
   font-family: Roboto, sans-serif;
+  margin: 0;
 }
+
 header,
-main,
 footer {
-  max-width: 1000px;
-  margin: 1rem auto;
-  border: 1px solid #ccc;
-  padding: 1rem;
   background-color: rgb(107, 107, 238);
+  color: white;
 }
-h1 {
+
+header {
+  padding: 1rem;
   text-align: center;
 }
 
-nav a {
-  padding: 20px;
-  color: black;
-  display: none;
+h1 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.5rem;
 }
-nav a:hover {
-  text-decoration: none;
-  color: #616061;
+
+main {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 1rem;
+  background-color: #d9d9d9;
 }
-.menu-btn {
-  cursor: pointer;
-  border: none;
-  background-color: transparent;
+
+main h2 {
+  text-align: center;
+  color: #333;
+  margin-top: 0;
 }
-footer {
+
+nav {
   text-align: center;
 }
-img {
-  border: 100px black;
+
+.menu-label {
+  display: block;
+  color: white;
+  text-decoration: none;
+  font-size: 0.9rem;
 }
+
+.menu-label:hover {
+  color: #e0e0e0;
+}
+
+.nav-links {
+  display: none;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li {
+  display: inline;
+}
+
+.nav-links li a {
+  color: white;
+  text-decoration: underline;
+  font-size: 0.85rem;
+  padding: 0 10px;
+}
+
+.nav-links li a:hover {
+  color: #e0e0e0;
+}
+
+section {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 15px;
+}
+
+img {
+  width: 100%;
+  border: 5px solid white;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+  border-radius: 15px;
+  display: block;
+}
+
+footer {
+  text-align: center;
+  padding: 0.5rem;
+  font-size: 0.85rem;
+}
+
 @media screen and (min-width: 700px) {
-  @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
-  nav a {
-    display: inline;
+  section {
+    grid-template-columns: repeat(2, 1fr);
   }
-  nav {
-    display: flex;
-    justify-content: right;
-  }
-  .menu-btn {
+}
+
+@media screen and (min-width: 1200px) {
+  .menu-label {
     display: none;
   }
-  main {
-    flex-wrap: wrap;
+  .nav-links {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    gap: 15px;
   }
-
   section {
-    max-width: 40%;
-  }
-}
-@media screen and (min-width: 1200px) {
-  section {
-    max-width: 25%;
-  }
-  main {
-    flex-wrap: nowrap;
-    flex-direction: row;
+    grid-template-columns: repeat(3, 1fr);
   }
 }
