@@ -44,8 +44,12 @@ nav {
 
 .menu-label {
   display: block;
+  margin: 0 auto;
+  background: none;
+  border: none;
+  font: inherit;
+  cursor: pointer;
   color: white;
-  text-decoration: none;
   font-size: 0.9rem;
 }
 
@@ -54,14 +58,18 @@ nav {
 }
 
 .nav-links {
-  display: none;
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
+.nav-links.hide {
+  display: none;
+}
+
 .nav-links li {
-  display: inline;
+  display: block;
+  padding: 0.3rem 0;
 }
 
 .nav-links li a {
@@ -101,11 +109,16 @@ footer {
   }
 }
 
+section img {
+  cursor: pointer;
+}
+
 @media screen and (min-width: 1200px) {
   .menu-label {
     display: none;
   }
-  .nav-links {
+  .nav-links,
+  .nav-links.hide {
     display: flex;
     justify-content: center;
     gap: 15px;
@@ -113,4 +126,35 @@ footer {
   section {
     grid-template-columns: repeat(3, 1fr);
   }
+}
+
+.viewer {
+  border: none;
+  padding: 0;
+  background: transparent;
+  max-width: 90vw;
+  max-height: 90vh;
+  overflow: visible;
+}
+
+.viewer::backdrop {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.viewer img {
+  max-width: 90vw;
+  max-height: 85vh;
+  width: auto;
+  margin: 0 auto;
+}
+
+.close-viewer {
+  position: absolute;
+  top: -2.2rem;
+  right: 0;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
 }

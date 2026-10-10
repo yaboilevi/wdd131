@@ -4,14 +4,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="coolpic.css" rel="stylesheet" />
+    <script src="coolpics.js" defer></script>
     <title>Cool Pics</title>
   </head>
   <body>
     <header>
       <h1>Cool Pics 📷</h1>
       <nav>
-        <a class="menu-label">Menu</a>
-        <ul class="nav-links">
+        <button class="menu-label" aria-expanded="false" aria-controls="nav-links">Menu</button>
+        <ul class="nav-links hide" id="nav-links">
           <li><a>Home</a></li>
           <li><a>People</a></li>
           <li><a>Places</a></li>
@@ -34,6 +35,10 @@
         <img src="cool_pic.jpg" alt="Cool pic" />
       </section>
     </main>
+    <dialog class="viewer">
+      <button class="close-viewer" aria-label="Close">X</button>
+      <img src="" alt="" />
+    </dialog>
     <footer>&copy;2025 Levi Miller</footer>
   </body>
 </html>
