@@ -19,12 +19,12 @@ let coursesAndGPA = [
 ];
 
 console.log(coursesAndGPA);
-console.log(courseName);
-console.log(courseGPA);
+console.log(coursesAndGPA[0].courseName);
+console.log(coursesAndGPA[0].courseGPA);
 
 // looping through a array
 
-for (let i = 0; 1, coursesAndGPA.length; i++) {
+for (let i = 0; i < coursesAndGPA.length; i++) {
   console.log(coursesAndGPA[i].courseName);
   console.log(coursesAndGPA[i].courseGPA);
 }
@@ -42,7 +42,5 @@ coursesAndGPA.forEach((course) => {
         <h2>${course.courseName}</h2>
         <p>${course.courseGPA}</p>
     </div>`;
-  document
-    .querySelector("#courses")
-    .insertAdjacentHTML("beforeend", dynamicHTML);
+  body.insertAdjacentHTML("beforeend", dynamicHTML);
 });
