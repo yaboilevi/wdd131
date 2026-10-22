@@ -1,0 +1,12 @@
+.body {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
+.h1 {
+  text-align: center;
+}
+
+.navbar {
+  text-align: left;
+}
