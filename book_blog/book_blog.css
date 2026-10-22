@@ -1,12 +1,45 @@
-.body {
+body {
   display: grid;
   grid-template-rows: auto 1fr auto;
+  background-color: rgb(245, 241, 228);
 }
 
-.h1 {
+h1 {
   text-align: center;
 }
 
 .navbar {
-  text-align: left;
+  text-align: right;
+  display: flex;
+  justify-content: right;
+  gap: 20px;
+}
+.Yline {
+  height: 5px;
+  background-color: rgb(201, 162, 39);
+}
+.book {
+  display: grid;
+  grid-template-columns: 1fr 150px;
+  gap: 1rem;
+  align-items: center;
+  max-width: 700px;
+  margin: 0 auto;
+}
+.book_info {
+  border-right: 3px solid yellow;
+  padding-right: 1rem;
+}
+.book img {
+  height: auto;
+  width: 100%;
+  max-width: 150px;
+}
+footer {
+  text-align: center;
+}
+@media (max-width: 600px) {
+  .book {
+    grid-template-columns: 1fr;
+  }
 }
