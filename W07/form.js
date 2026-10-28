@@ -30,6 +30,9 @@ function getSelectedCampuses() {
 
 form.addEventListener("submit", function (event) {
   event.preventDefault();
+
+  console.log(event.target.email.value);
+
   output.textContent = "";
 
   const firstName = form.firstName.value.trim();
@@ -42,10 +45,16 @@ form.addEventListener("submit", function (event) {
 
   // Validate the input
   // Let the user know to select at least one campus
-
+  if (selectedCampuses.length == 0) {
+    output.textContent = "You need to select a campus you dumb ahhh. ";
+  }
   // Let the user know if they choose many campuses but didn't put a note that they need to add a note
 
   //Let the user know if they choose many campus but only had one campus selected that they need to choose at least two campuses
+
+  if (travelRange.value === "many" && selectedCampuses.length < 2) {
+    output.textContent = "You need to select two campuses you dumb ahhh. ";
+  }
 
   if (isPastDate(availableDate)) {
     output.textContent = "Please choose a later date.";
