@@ -20,27 +20,46 @@ const aCourse = {
       instructor: "Bro Warner",
     },
   ],
-  enrolled: function (sectionNumber) {
-    console.log(this.name);
+  // find the section they entered and add one student to just that section
+  enrollStudent: function (sectionNumber) {
+    const sectionIndex = this.sections.findIndex(
+      (section) => section.sectionNum == sectionNumber,
+    );
+    if (sectionIndex >= 0) {
+      this.sections[sectionIndex].enrolled++;
+      renderSections(this.sections);
+    }
   },
 };
 
-console.log(aCourse.name);
-aCourse.enrolled(1);
+// fill in the course name and code
+function setCourseInfo(course) {
+  document.querySelector("#courseName").textContent = course.name;
+  document.querySelector("#courseCode").textContent = course.code;
+}
+
+// build one table row for a section
+function sectionTemplate(section) {
+  return `<tr>
+    <td>${section.sectionNum}</td>
+    <td>${section.roomNum}</td>
+    <td>${section.enrolled}</td>
+    <td>${section.days}</td>
+    <td>${section.instructor}</td>
+  </tr>`;
+}
+
+// build all rows and put them in the table body
+function renderSections(sections) {
+  const html = sections.map(sectionTemplate);
+  document.querySelector("#sections").innerHTML = html.join("");
+}
+
+setCourseInfo(aCourse);
+renderSections(aCourse.sections);
 
 // event listener when button is pressed
 document.querySelector("#enrollStudent").addEventListener("click", (e) => {
-  let sectionNumber = document.querySelector("#sectionNumber").value.trim();
-
-  aCourse.sections.forEach((sections) => {
-    if (sections.sectionNum == sectionNumber) {
-      sections.enrolled += 1;
-    }
-    console.log(sections.sectionNum);
-    console.log(sections.enrolled);
-  });
+  const sectionNumber = document.querySelector("#sectionNumber").value.trim();
+  aCourse.enrollStudent(sectionNumber);
 });
-
-//when pressed, fund the section num they entered
-
-//increment enrollment of just that section by 1
