@@ -280,16 +280,17 @@ const recipes = [
   },
 ];
 
-// test if search barr works
-const searchForm = document.querySelector(".search");
-const searchInput = document.querySelector("#search");
 
-function searchHandler(event) {
-  event.preventDefault();
-  const query = searchInput.value.toLowerCase();
-  console.log(query);
+// random helper
+
+function random(num) {
+  return Math.floor(Math.random() * num);
 }
-searchForm.addEventListener("submit", searchHandler);
+
+function getRandomListEntry(list) {
+  const index = random(list.length);
+  return list[index];
+}
 
 // recipe template
 
@@ -304,7 +305,6 @@ function recipeTemplate(recipe) {
         </div>
     </article>`;
 }
-console.log(recipeTemplate(recipes[0]));
 
 // rating Template
 
@@ -319,6 +319,54 @@ function ratingTemplate(rating) {
   }
   return `<span class="rating" role="img" aria-label="Rating: ${rating} out of 5 stars">${html}</span>`;
 }
-console.log(ratingTemplate);
 
 // tagsTemplate
+
+function tagsTemplate(tags) {
+  let html = `<ul class="tags">`;
+  for (const tag of tags) {
+    html += `<li><button>${tag}</button></li>`;
+  }
+  html += `</ul>`;
+  return html;
+}
+
+// renderRecipes
+
+function renderRecipes(recipeList) {
+  const main = document.querySelector("main");
+  const html = recipeList.map(recipeTemplate).join("");
+  main.innerHTML = html;
+}
+
+// init
+
+function init() {
+  const recipe = getRandomListEntry(recipes);
+  renderRecipes([recipe]);
+}
+init();
+
+// search
+
+const searchForm = document.querySelector(".search");
+const searchInput = document.querySelector("#search");
+
+function filterRecipes(query) {
+  return recipes
+    .filter(
+      (recipe) =>
+        recipe.name.toLowerCase().includes(query) ||
+        recipe.description.toLowerCase().includes(query) ||
+        recipe.tags.find((tag) => tag.toLowerCase().includes(query)),
+    )
+    .sort((a, b) => a.name.localeCompare(b.name));
+}
+
+function searchHandler(event) {
+  event.preventDefault();
+  const query = searchInput.value.toLowerCase().trim();
+  const results = filterRecipes(query);
+  renderRecipes(results);
+}
+searchForm.addEventListener("submit", searchHandler);
