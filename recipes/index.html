@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="recipe.js" defer></script>
     <title>Recipe Book</title>
 
     <!-- Open Graph (Facebook, LinkedIn, etc.) -->
@@ -12,7 +13,10 @@
       property="og:description"
       content="Simple, delicious recipes like apple crisp."
     />
-    <meta property="og:url" content="https://yaboilevi.github.io/wdd131/recipes" />
+    <meta
+      property="og:url"
+      content="https://yaboilevi.github.io/wdd131/recipes"
+    />
     <meta property="og:image" content="images/social-preview-image.png" />
 
     <!-- X Card -->
@@ -46,7 +50,9 @@
         placeholder="Find a recipe"
         aria-label="Find a recipe"
       />
-      <button type="submit"><img src="images/search.svg" alt="Search" /></button>
+      <button type="submit">
+        <img src="images/search.svg" alt="Search" />
+      </button>
     </form>
 
     <main>
@@ -61,11 +67,7 @@
             <li><button>dessert</button></li>
           </ul>
           <h2>Apple Crisp</h2>
-          <span
-            class="rating"
-            role="img"
-            aria-label="Rating: 4 out of 5 stars"
-          >
+          <span class="rating" role="img" aria-label="Rating: 4 out of 5 stars">
             <span aria-hidden="true" class="icon-star">⭐</span>
             <span aria-hidden="true" class="icon-star">⭐</span>
             <span aria-hidden="true" class="icon-star">⭐</span>
@@ -83,9 +85,13 @@
     <footer>
       <div class="social">
         <!-- Social media icons provided under CC from https://www.iconfinder.com/AlfredoCreates  -->
-        <a href="#"><img src="images/instagram_icon.svg" alt="instagram icon" /></a>
+        <a href="#"
+          ><img src="images/instagram_icon.svg" alt="instagram icon"
+        /></a>
         <a href="#"><img src="images/youtube_icon.svg" alt="youtube icon" /></a>
-        <a href="#"><img src="images/pinterest_icon.svg" alt="pinterest icon" /></a>
+        <a href="#"
+          ><img src="images/pinterest_icon.svg" alt="pinterest icon"
+        /></a>
       </div>
       <a href="https://www.flaticon.com/free-icons/recipe" title="recipe icons"
         >Recipe icons created by Freepik - Flaticon</a
